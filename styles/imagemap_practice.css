@@ -1,0 +1,42 @@
+img{
+	background: white;
+	background: none;
+}
+
+img.map, map area{
+	outline: none;
+}
+
+h2{
+	color: rgb(40, 70, 140);
+}
+
+.horizontal-menu{
+	color: rgb(40, 70, 140);
+}
+.horizontal-menu ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background-color: rgb(120, 170, 240);
+	background-color: rgb(160, 195, 245);
+	border-radius: 15px 0 0 15px;
+}
+.horizontal-menu li{
+	float: left;
+	border-right: 1px solid rgb(150, 210, 255);
+	border-right: 1px solid rgb(210, 240, 250);
+}
+.horizontal-menu li a{
+	color: rgb(40, 70, 140);
+	display: block;
+	padding: 20px;
+	background-color: rgb(120, 170, 240);
+	background-color: rgb(160, 195, 245);
+	text-align: center;
+}
+.horizontal-menu li a:hover{
+	background-color: rgb(80, 120, 200);
+	color: rgb(120, 170, 240);
+}

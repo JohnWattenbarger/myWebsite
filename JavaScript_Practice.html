@@ -1,0 +1,105 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<title>
+		JavaScript Practice
+	</title>
+	<link rel="stylesheet" type="text/css" href="styles/index.css" />
+</head>
+
+<body>
+
+   <div class="header">
+	 <h1> JavaScript Practice </h1>
+	 <div class="linksBar">
+	 	<ul>
+			<li><a href="index.html"> Home </a></li>
+			<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+			<li><a href="Table_Practice.html"> Table Practice </a></li>
+			<li><a href="imagemap_practice.html"> Image Mapping </a></li>
+			<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
+			<li><a href="Game_practice.html"> Games </a></li>
+		</ul>
+	 </div>
+   </div>
+
+   <div class="content">
+
+	<h2> Time </h2>
+	 <script type="text/javascript">
+		now = new Date();
+		localtime = now.toString();
+		utctime = now.toGMTString();
+
+		document.write("<strong>Local time:</strong> " + localtime + "<br/>");
+		document.write("<strong>UTC time:</strong> " + utctime);
+
+		hours = now.getHours();
+		mins = now.getMinutes();
+		secs = now.getSeconds();
+
+		document.write("<h3>");
+		document.write(hours + ":" + mins + ":" + secs);
+		document.write("</h3>");
+
+		document.write("<p>");
+		document.write("Last Modified on: " + document.lastModified);
+		document.write("</p>");
+	 </script>
+
+	<div class="picture_box">
+	 <h2> Pictures </h2>
+		<p> Move your mouse over a team Logo to show there best player </p>
+		<ul>
+			<li> <a href="#" onmouseover="javascript:document.football_img.src='images/aaron_rodgers.jpg'; javascript:document.football_img.title='Aaron Rodgers'"> <img src="images/packers_logo.jpg" title="packers" alt="packers logo" /> </a> </li>
+			<li> <a href="#" onmouseover="javascript:document.football_img.src='images/jj_watt.jpg'; javascript:document.football_img.title='JJ Watt'"> <img src="images/texans_logo.jpg" title="texans" alt="texans logo" /> </a> </li>
+			<li> <a href="#" onmouseover="javascript:document.football_img.src='images/tom_brady.jpg'; javascript:document.football_img.title='Tom Brady'"> <img src="images/patriots_logo.jpg" title="patriots" alt="patriots logo" /> </a> </li>
+			<li> <a href="#" onmouseover="javascript:document.football_img.src='images/luke_kuechly.jpg'; javascript:document.football_img.title='Luke Kuechly'"> <img src="images/panthers_logo.jpg" title="panthers" alt="panthers logo" /> </a> </li>
+		</ul>
+		<img name="football_img" src="images/nfl_logo.jpg" alt="NFL logo" />
+	</div>
+
+	<h2> Buttons </h2>
+		<p> Creates a 'back' button on your page </p>
+		<input type="button" onClick="history.back();"" value="Back">
+		<input type="button" onClick="history.forward();"" value="Forward">
+
+	<div class="hide">
+	<h2> YouTube Videos </h2>
+		<p> Move your mouse over any song name to switch the YouTube video to that song </p>
+		<ul>
+			<li> Monster </li>
+			<li><a href="#" onmouseover="javascript:document.youtube_video.src = 'https://www.youtube.com/emed/kjWHpTkH7pA' "> Fire N Gold </a></li>
+			<li> How To Love </li>
+			<li> Symphony </li>
+			<li> In My MiNd </li>
+		</ul>
+		<iframe name="youtube_video" width="640" height="360" src="https://www.youtube.com/embed/DYS_qFWx7-M" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+
+   </div>
+
+   <div class="footer">
+ 	 <div class="footerBox">
+	 <h2> My Webpages </h2>
+		<ul>
+			<li><a href="index.html"> Home </a></li>
+			<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+			<li><a href="Table_Practice.html"> Table Practice </a></li>
+			<li><a href="imagemap_practice.html"> Image Mapping </a></li>
+			<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
+			<li><a href="Game_practice.html"> Games </a></li>
+		</ul>
+	 </div>
+   </div>
+
+</body>
+
+</html>

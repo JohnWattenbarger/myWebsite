@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<title> John's Resume </title>
+	<link rel="stylesheet" type="text/css" href="formatting_practice.css" />
+</head>
+
+<body>
+
+ <div id="body">
+
+  <div class="center">
+	<h1>
+		John C. Wattenbarger
+	</h1>
+	<p>
+		Houston, TX 77098
+	</p>
+	<p>
+		(281) 840-0236
+	</p>
+	<p>
+		johncwattenbarger@gmail.com
+	</p>
+  </div>
+
+	<h2> OBJECTIVE </h2>
+		<p> Seeking an internship to gain experience </p>
+
+	<h2> EDUCATION </h2>
+		<div id="textbox">
+		  <p class="bold", class="left_special">University of St. Thomas </p> 
+		  <p class="right_special"> Houston, TX </p>
+		</div>
+		<div id="textbox">
+		  <p class="left_special">
+			Bachelor of Science, Computer Science </p> 
+		  <p class="right_special">Expected May 2019 </p>
+		</div>
+		<p> Cumulative GPA: 3.9 </p>
+		<p> Major GPA: 4.0 </p>
+			</br>
+		<p> <span class="bold">Relevant Coursework: </span> </br>
+			Intro to Programming </br>
+			Data Structures </br>
+			Object Oriented Programming </br>
+			Computer and Network Architecture
+		</p>
+
+	<h2> EXPERIENCE </h2>
+		<div id="textbox">
+		  <p class="bold", class="left_special"> By Berries Frozen Yogurt </p>
+		  <p class="right_special"> Houston, TX </p>
+		</div>
+		<div id="textbox">
+		  <p class="left_special">Cashier	</p>
+		  <p class="right_special"> Aug 2013 - Jun 2014 </p>
+		</div>
+		<ul>
+			<li> Maintained a friendly attitude and provided excellent customer service </li>
+			<li> Trained two new employees on company procedures </li>
+			<li> Responsible for handling and storing cash </li>
+		</ul>
+
+		<div id="textbox">
+		  <p class="bold", class="left_special"> City of Bellaire </p>
+		  <p class="right_special"> Bellaire, TX </p>
+		</div>
+		<div id="textbox">
+		  <p class="left_special"> Lifeguard </p>
+		  <p class="right_special"> May 2010 - Aug 2010 </p>
+		</div>
+		<ul>
+			<li> Looked after the safety of our patrons </li>
+			<li> Attended regular safety training </li>
+			<li> Kept a clean environment </li>
+		</ul>
+
+	<h2> SKILLS </h2>
+		<p> Proficient in Microsoft Word, PowerPoint, and Excel </br>
+			Experience with C++ and Java
+		</p>
+
+	<h2> ACTIVITIES </h2>
+		<div id="textbox">
+		  <p class="bold", class="left_special">Computer Science Club </p>
+		  <p class="right_special"> Spring 2017 - Present </p>
+		</div>
+		<p> President and Co-founder </p>
+
+	<h2> HONORS AND AWARDS </h2>
+		<p> Scholarship recipient </p>
+		<div id="textbox">
+		  <p class="left_special"> Dean’s list </p>
+		  <p class="right_special"> Fall 2015 - Present </p>
+
+ </div>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<?xml version=”1.0” encoding=”UTF-8”?>
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.1//EN”
+“http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd”>
+
+
+<html xmlns=”http://www.w3.org/1999/xhtml” xml:lang=”en”>
+
+   <head>
+      <title> The First Web Page </title>
+      <link rel=”stylesheet” type=”text/css” href=”styleSheet.css” />
+   </head>
+
+   <body>
+      <h1>
+         The First Web Page
+      </h1>
+      <p>
+         This is a test for creating a web page. Hopefully it looks ok. 
+         *Note: a new line will not start unless specified, or if the 
+	 text reaches the edge of the browser window. To test this, I 
+	 am going to write a very long sentence that will (hopefully) 
+	 reach the edge of the browser.
+      </p>
+
+      <p>
+	 In this second paragraph, I will demonstrate the awesome power
+	 of line breaks.
+	    <br /> 
+	 Behold my wizardry :)
+	    <hr />
+	 I have also elected to demonstrate a horizontal line break (hr).
+      </p>
+   </body>
+</html>
