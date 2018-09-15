@@ -1,6 +1,5 @@
 /*
     Note:
-        - Make script self contained (w/o depending on html or css)
         - Add a "click to start" initial screen
         - Add more obstacles
         - Add a high score
