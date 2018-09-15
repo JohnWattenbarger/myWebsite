@@ -1,38 +1,35 @@
 /*
-    Note: finish myScore. It broke when I added the scales to it.
-        Also, myGameArea.width and myGameArea.height aren't working coreectly.
+    Note:
+        - Make script self contained (w/o depending on html or css)
+        - Add a "click to start" initial screen
+        - Add more obstacles
+        - Add a high score
 */
-
 
 var myGamePiece;
 var myObstacle;
 
-/*function restartGame() {
-    document.getElementById("myfilter").style.display = "none";
-    document.getElementById("myrestartbutton").style.display = "none";
-    myGameArea.stop();
-    myGameArea.clear();
-    myGameArea = {};
-    myGamePiece = {};
-    myObstacles = [];
-    myscore = {};
-    document.getElementById("canvascontainer").innerHTML = "";
-    startGame()
-}*/
+// start the game after the page has loaded
+document.addEventListener('DOMContentLoaded', startGame() );
 
 function startGame() {
-    myGamePiece = new component(30, 30, randomColor(), 240, 135, 5, "player");
-    myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
-    myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
+    createComponents();
     myGameArea.start();
 }
 
-var myGameArea = {
-    canvas : document.getElementById("game1"),
-    start : function() {
+function GameArea() {
+    this.canvas = document.createElement("canvas"),
+    this.start = function() {
         this.canvas.width = 480;
         this.canvas.height = 270;
+
         this.context = this.canvas.getContext("2d");
+
+        this.canvas.style.margin = "20px";
+        this.canvas.style.border = "1px solid rgb(100,100,100)";
+        this.canvas.style.backgroundColor = "rgb(230, 230, 230)";
+
+
         this.interval = setInterval(updateGameArea, 20);
 
         window.addEventListener('keydown', function (e) {
@@ -45,11 +42,14 @@ var myGameArea = {
         })
 
         this.frameNo = 0;
+
+        // document.body.insertBefore(this.canvas, document.currentScript.nextSibling);
+        document.currentScript.parentElement.insertBefore(this.canvas, document.currentScript);
     },
-    clear : function() {
+    this.clear = function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
-    stop : function() {
+    this.stop = function() {
         clearInterval(this.interval);
     }
 }
@@ -130,6 +130,8 @@ function updateGameArea() {
     }
 
     myGameArea.frameNo += 1;
+
+    // change player color every 200 frames
     if(myGameArea.frameNo%200 == 0)
         myGamePiece.color = randomColor();
 }
@@ -222,4 +224,11 @@ function outOfBounds(obj) {
     return false;
 }
 
-document.getElementById("gameButton").onClick = startGame();
+function createComponents(){
+    myGamePiece = new component(30, 30, randomColor(), 240, 135, 5, "player");
+    myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
+    myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
+    myGameArea = new GameArea;
+}
+
+// document.getElementById("gameButton").onClick = startGame();

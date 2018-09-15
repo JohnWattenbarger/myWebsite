@@ -1,7 +1,7 @@
 
 /*
     Note: 
-        - right click (anywhere on the screen) switches to demo mode
+        - click "~" key (anywhere on the screen) switches to demo mode
         - switch the text in changeColors() function at the begginning to switch to different color schemes
         - keeps track of the high score on this machine (to reset put resetHighScore() right below changeColors() and the game)
         - click anywhere on the game to start
@@ -72,15 +72,16 @@ function GameArea() {
         window.addEventListener('keyup', function (e) {
             myGameArea2.key = false;
         })
-        // used for Demo Mode (switches on right-clicks)
-        window.addEventListener("contextmenu", function (e) {
-            if(demoMode)
-                demoMode = false;
-            else
-                demoMode = true;
+        // used for Demo Mode (switches on "~" presses)
+        window.addEventListener("keydown", function (e) {
+            if(e.keyCode == 192)
+                if(demoMode)
+                    demoMode = false;
+                else
+                    demoMode = true;
         })
 
-        document.body.insertBefore(this.canvas, document.currentScript.nextSibling);
+        document.currentScript.parentElement.insertBefore(this.canvas, document.currentScript);
     
         createComponents();
 }
@@ -180,7 +181,7 @@ function component(width, height, color, x, y) {
 
 function createComponents() {
     myGamePiece2 = new component(30, 30, myColors.pieceColor, 100, 120);
-    
+
 }
 
 function updateGameArea() {
@@ -304,7 +305,6 @@ function randomColor() {
     var b = Math.floor(Math.random()*256);
     return "rgb("+r+","+g+","+b+")";
 }
-
 
 function ColorChoices() {
         this.canvasBackground = "rgb(200, 250, 255)";
