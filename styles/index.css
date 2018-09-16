@@ -206,20 +206,20 @@ a{
 	display: none;
 }
 
-.test{
+.introBox{
 	height: 500px;
 }
-.test img{
+.introBox img{
 	float: left;
 	margin-left: 10%;
 	margin-top: 50px;
 }
-.test .textBox{
+.introBox .textBox{
 	float: right;
 	margin-left: 0;
 	margin-right: 10%;
 }
-.test p{
+.introBox p{
 	width: 84%;
 	margin-left: 8%;
 	text-align: justify;
@@ -228,4 +228,5 @@ a{
 #myWebpage{
 	float: left;
 	width: 100%;
+	margin-left: 0;
 }
