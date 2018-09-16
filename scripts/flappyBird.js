@@ -8,17 +8,17 @@
         - use space bar to jump
 
     Future updates:
-        - Possibly make right click only work in the game, and not show a menu
         - New high scores currently print over the old high score at the end of the game
-        - clicking the canvas/game highlights words below the canvas/game
         - Add a menu to select color schemes
 */
 
-var myGamePiece2;
+(function() {
+
+var myGamePiece;
 var myObstacles = [];
 var score = 0;
 var myCanvas;
-var myGameArea2 = new GameArea();
+var myGameArea = new GameArea();
 var timesRun = 0;
 var highScore;
 var myColors = new ColorChoices();
@@ -36,23 +36,23 @@ var demoMode = false;
 
 function startGame() {
     if(timesRun == 0) {
-        myGameArea2.setup();
-        myGameArea2.waitForStart();
+        myGameArea.setup();
+        myGameArea.waitForStart();
     }
     else {
-        myGameArea2.reset();
-        myGameArea2.waitForStart();
+        myGameArea.reset();
+        myGameArea.waitForStart();
     }
 }
 
 
 function GameArea() {
     this.canvas = document.createElement("canvas");
-    var handler = function(event){myGameArea2.start();}
-    var handler2 = function(event){myGameArea2.reset();}
+    var handler = function(event){myGameArea.start();}
+    var handler2 = function(event){myGameArea.reset();}
 
     this.setup = function(){
-        this.canvas.setAttribute("id", "game2");
+        // this.canvas.setAttribute("id", "game2");
         this.context = this.canvas.getContext("2d");
 
         this.canvas.style.backgroundColor = myColors.canvasBackground;
@@ -67,10 +67,10 @@ function GameArea() {
         getHighScore();
 
         window.addEventListener('keydown', function (e) {
-            myGameArea2.key = e.keyCode;
+            myGameArea.key = e.keyCode;
         })
         window.addEventListener('keyup', function (e) {
-            myGameArea2.key = false;
+            myGameArea.key = false;
         })
         // used for Demo Mode (switches on "~" presses)
         window.addEventListener("keydown", function (e) {
@@ -84,7 +84,7 @@ function GameArea() {
         document.currentScript.parentElement.insertBefore(this.canvas, document.currentScript);
     
         createComponents();
-}
+    }
 
     // when mouse is clicked, run this.start()
     this.waitForStart = function(){
@@ -134,7 +134,7 @@ function component(width, height, color, x, y) {
 
     // redraws the component
     this.update = function(){
-        context = myGameArea2.context;
+        context = myGameArea.context;
         context.fillStyle = color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
@@ -180,7 +180,7 @@ function component(width, height, color, x, y) {
 }
 
 function createComponents() {
-    myGamePiece2 = new component(30, 30, myColors.pieceColor, 100, 120);
+    myGamePiece = new component(30, 30, myColors.pieceColor, 100, 120);
 
 }
 
@@ -191,14 +191,14 @@ function updateGameArea() {
     if(crashed())
         return;
     
-    myGameArea2.clear();
-    myGameArea2.frameNo += 1;
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
 
     // creates 2 new walls with a gap in between them every 150 frames
     createWalls();
 
     // update score
-    if(myGameArea2.frameNo > 200 && (myGameArea2.frameNo-50) % 150 == 0)
+    if(myGameArea.frameNo > 200 && (myGameArea.frameNo-50) % 150 == 0)
         score++;
 
     // move every obstacle one to the left each frame
@@ -206,29 +206,29 @@ function updateGameArea() {
     
 
     // keeps the main character in place
-    if(myGamePiece2.jumpTimeRemaining==0)
-        myGamePiece2.speedY = 0; 
+    if(myGamePiece.jumpTimeRemaining==0)
+        myGamePiece.speedY = 0; 
 
 
     // used for demo mode
-    if(updateY == myGameArea2.frameNo)
+    if(updateY == myGameArea.frameNo)
         currentY = nextY;
     if(demoMode) {
         if(needToJump())
-            myGamePiece2.jump();
+            myGamePiece.jump();
     }
 
     // key 32 is the space bar
-    if(myGameArea2.key == 32 && myGamePiece2.y > 0)
-        myGamePiece2.jump();
-    myGamePiece2.gravity = 0;
+    if(myGameArea.key == 32 && myGamePiece.y > 0)
+        myGamePiece.jump();
+    myGamePiece.gravity = 0;
 
     // decrement the jumpTime every frame
-    if(myGamePiece2.jumpTimeRemaining != 0)
-        myGamePiece2.jumpTimeRemaining--;
+    if(myGamePiece.jumpTimeRemaining != 0)
+        myGamePiece.jumpTimeRemaining--;
 
-    myGamePiece2.newPosition();
-    myGamePiece2.update();
+    myGamePiece.newPosition();
+    myGamePiece.update();
 
     displayHighScore();
     displayScore();
@@ -237,14 +237,14 @@ function updateGameArea() {
 // check if the gamepiece hit a wall or the floor
 function crashed() {
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece2.crashWith(myObstacles[i])) {
-            myGameArea2.stop();
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            myGameArea.stop();
             return true;
         }
     }
 
-    if(myGamePiece2.y + myGamePiece2.height > myGameArea2.canvas.height) {
-        myGameArea2.stop();
+    if(myGamePiece.y + myGamePiece.height > myGameArea.canvas.height) {
+        myGameArea.stop();
         return true;
     }
 
@@ -253,9 +253,9 @@ function crashed() {
 
 // creates 2 new walls with a gap in between them every 150 frames
 function createWalls() {
-    if(myGameArea2.frameNo % 150 == 0) {
+    if(myGameArea.frameNo % 150 == 0) {
         wallColor = myColors.obstacleColor;
-        x = myGameArea2.canvas.width;
+        x = myGameArea.canvas.width;
         minHeight = 20;
         maxHeight = 170;
         height = Math.floor(Math.random()*(maxHeight - minHeight + 1) + minHeight);
@@ -264,9 +264,9 @@ function createWalls() {
         myObstacles.push(new component(50, x - height - gap, wallColor, x, height + gap));
 
         // used for demo mode
-        updateY = myGameArea2.frameNo + 62;
+        updateY = myGameArea.frameNo + 62;
         nextY = (height + gap - 35);
-        if(myGameArea2.frameNo < 200)
+        if(myGameArea.frameNo < 200)
             currentY = nextY;
     }
 }
@@ -281,22 +281,22 @@ function moveWalls() {
 
 // display the current score
 function displayScore() {
-    myGameArea2.context.font = "20px" + " " + "Consolas";
-    myGameArea2.context.fillStyle = myColors.textColor;
-    myGameArea2.context.fillText("Score: " + score, 350, 40)
+    myGameArea.context.font = "20px" + " " + "Consolas";
+    myGameArea.context.fillStyle = myColors.textColor;
+    myGameArea.context.fillText("Score: " + score, 350, 40)
 }
 
 // display "Game Over"
 function endGameMessage() {
-    myGameArea2.context.font = "40px" + " " + "Consolas";
-    myGameArea2.context.fillStyle = myColors.textColor;
-    myGameArea2.context.fillText("Game Over", 130, 140)
+    myGameArea.context.font = "40px" + " " + "Consolas";
+    myGameArea.context.fillStyle = myColors.textColor;
+    myGameArea.context.fillText("Game Over", 130, 140)
 }
 
 function waitingMessage() {
-    myGameArea2.context.font = "30px" + " " + "Consolas";
-    myGameArea2.context.fillStyle = myColors.textColor;
-    myGameArea2.context.fillText("Click to start", 130, 140)
+    myGameArea.context.font = "30px" + " " + "Consolas";
+    myGameArea.context.fillStyle = myColors.textColor;
+    myGameArea.context.fillText("Click to start", 130, 140)
 }
 
 function randomColor() {
@@ -349,9 +349,9 @@ function getHighScore() {
 }
 
 function displayHighScore() {
-    myGameArea2.context.font = "20px" + " " + "Consolas";
-    myGameArea2.context.fillStyle = myColors.textColor;
-    myGameArea2.context.fillText("High Score: " + highScore, 300, 80)
+    myGameArea.context.font = "20px" + " " + "Consolas";
+    myGameArea.context.fillStyle = myColors.textColor;
+    myGameArea.context.fillText("High Score: " + highScore, 300, 80)
 }
 
 function updateHighScore() {
@@ -369,15 +369,18 @@ function needToJump(){
     var atJumpY = false;
 
     // if the game piece gets close to the bottom, jump
-    if(myGameArea2.frameNo < 150){
-        if(myGamePiece2.y > (myGameArea2.canvas.height - 60))
+    if(myGameArea.frameNo < 150){
+        if(myGamePiece.y > (myGameArea.canvas.height - 60))
             return true;
         else
             return false;
     }
 
-    if(myGamePiece2.y > currentY - 5)
+    if(myGamePiece.y > currentY - 5)
         atJumpY = true;
 
     return atJumpY;
 }
+
+
+})();

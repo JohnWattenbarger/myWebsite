@@ -5,20 +5,38 @@
         - Add a high score
 */
 
+// wrapping everything in (function() {... everything ...})(); prevents variables from being accessed in other scripts
+(function() {
+
+var myGameArea;
 var myGamePiece;
 var myObstacle;
 
 // start the game after the page has loaded
 document.addEventListener('DOMContentLoaded', startGame() );
 
+
 function startGame() {
     createComponents();
-    myGameArea.start();
+    myGameArea.setup();
+    // myGameArea.start();
+    myGameArea.waitToStart();
 }
 
 function GameArea() {
-    this.canvas = document.createElement("canvas"),
-    this.start = function() {
+    this.canvas = document.createElement("canvas");
+
+    var handler3 = function(e){myGameArea.start()};
+
+    this.waitToStart = function() {
+        myGameArea.canvas.addEventListener("click", handler3);
+    }
+
+    this.test = function() {
+        console.log("click happened");
+    }
+
+    this.setup = function() {
         this.canvas.width = 480;
         this.canvas.height = 270;
 
@@ -28,8 +46,7 @@ function GameArea() {
         this.canvas.style.border = "1px solid rgb(100,100,100)";
         this.canvas.style.backgroundColor = "rgb(230, 230, 230)";
 
-
-        this.interval = setInterval(updateGameArea, 20);
+        this.frameNo = 0;
 
         window.addEventListener('keydown', function (e) {
             e.preventDefault();
@@ -40,14 +57,20 @@ function GameArea() {
             myGameArea.keys[e.keyCode] = (e.type == "keydown");
         })
 
-        this.frameNo = 0;
-
-        // document.body.insertBefore(this.canvas, document.currentScript.nextSibling);
         document.currentScript.parentElement.insertBefore(this.canvas, document.currentScript);
-    },
+    }
+
+    this.start = function() {
+        this.canvas.removeEventListener("click", handler3);
+
+
+        this.interval = setInterval(updateGameArea, 20);
+    }
+
     this.clear = function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
+    }
+
     this.stop = function() {
         clearInterval(this.interval);
     }
@@ -227,7 +250,10 @@ function createComponents(){
     myGamePiece = new component(30, 30, randomColor(), 240, 135, 5, "player");
     myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
     myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
-    myGameArea = new GameArea;
+    myGameArea = new GameArea();
 }
 
 // document.getElementById("gameButton").onClick = startGame();
+
+
+})();
