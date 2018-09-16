@@ -19,21 +19,17 @@ document.addEventListener('DOMContentLoaded', startGame() );
 function startGame() {
     createComponents();
     myGameArea.setup();
-    // myGameArea.start();
     myGameArea.waitToStart();
 }
 
 function GameArea() {
     this.canvas = document.createElement("canvas");
 
-    var handler3 = function(e){myGameArea.start()};
+    var startHandler = function(e){myGameArea.start()};
 
     this.waitToStart = function() {
-        myGameArea.canvas.addEventListener("click", handler3);
-    }
-
-    this.test = function() {
-        console.log("click happened");
+        waitingMessage();
+        myGameArea.canvas.addEventListener("click", startHandler);
     }
 
     this.setup = function() {
@@ -61,7 +57,7 @@ function GameArea() {
     }
 
     this.start = function() {
-        this.canvas.removeEventListener("click", handler3);
+        this.canvas.removeEventListener("click", startHandler);
 
 
         this.interval = setInterval(updateGameArea, 20);
@@ -251,6 +247,13 @@ function createComponents(){
     myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
     myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
     myGameArea = new GameArea();
+}
+
+
+function waitingMessage() {
+    myGameArea.context.font = "30px" + " " + "Consolas";
+    myGameArea.context.fillStyle = "rgb(0, 0, 0)";
+    myGameArea.context.fillText("Click to start", 130, 140)
 }
 
 // document.getElementById("gameButton").onClick = startGame();
