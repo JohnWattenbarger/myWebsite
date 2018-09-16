@@ -26,6 +26,7 @@ function GameArea() {
     this.canvas = document.createElement("canvas");
 
     var startHandler = function(e){myGameArea.start()};
+    var resetHandler = function(e){myGameArea.reset()};
 
     this.waitToStart = function() {
         waitingMessage();
@@ -69,6 +70,15 @@ function GameArea() {
 
     this.stop = function() {
         clearInterval(this.interval);
+        this.canvas.addEventListener("click", resetHandler);
+    }
+
+    this.reset = function(){
+        this.canvas.removeEventListener("click", resetHandler);
+        this.frameNo = 0;
+        this.clear();
+        resetComponents();
+        this.waitToStart();
     }
 }
 
@@ -243,10 +253,16 @@ function outOfBounds(obj) {
 }
 
 function createComponents(){
+    myGameArea = new GameArea();
     myGamePiece = new component(30, 30, randomColor(), 240, 135, 5, "player");
     myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
     myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
-    myGameArea = new GameArea();
+}
+
+function resetComponents(){
+    myGamePiece = new component(30, 30, randomColor(), 240, 135, 5, "player");
+    myObstacle  = new component(20, 20, "blue", 100, 100, 5, "obstacle");  
+    myScore = new component("20px", "Consolas", "black", 350, 40, 1, "text");  
 }
 
 
