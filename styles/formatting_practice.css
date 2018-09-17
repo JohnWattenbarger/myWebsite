@@ -26,6 +26,7 @@ h2{
 	padding: 4pt;
 	margin-bottom: 1pt;
 	padding-bottom: 1pt;
+	text-align: left;
 }
 
 ul{
@@ -62,10 +63,12 @@ ul{
 	background-color: rgb(240, 240, 240);
 	margin: auto;
 	width: 60%;
+	min-width: 600px;
 	border: 4px groove rgb(140, 190, 220);
 	border-radius: 15px;
 	padding: 10px;
 	padding-bottom: 20px;
 	margin-top: 10px;
 	margin-bottom: 50px;
+	padding-left: 20px;
 }

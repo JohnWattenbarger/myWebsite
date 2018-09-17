@@ -168,6 +168,7 @@ a{
 	/*margin-top: 5%;*/
 	color: rgb(100, 110, 120);
 	min-height: 232px;
+	min-width: 840px;
 }
 .footerBox{
 	background: inherit;
