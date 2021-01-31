@@ -1,187 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> John's Resume </title>
 	<link rel="stylesheet" type="text/css" href="styles/standard.css" />
 	<link rel="stylesheet" type="text/css" href="styles/formatting_practice.css" />
+	<script src="scripts/header.js"></script>
+
+	<!-- external sources -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
 
- 	<div class="header">
-	 <h1> Resum&eacute </h1>
-	 <div class="linksBar">
-	 	<ul>
-			<li><a href="index.html"> Home </a></li>
-			<li><a href="formatting_practice.html"> Resum&eacute </a></li>
-			<li><a href="Game_practice.html"> Games </a></li>
-			<li><a href="Table_Practice.html"> Table Practice </a></li>
-			<li><a href="imagemap_practice.html"> Image Mapping </a></li>
-			<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
-		</ul>
-	 </div>
+	<div class="header">
+		<h1>
+			Resum&eacute
+			<!-- only visible for mobile -->
+			<button class="menu" onclick="Header.openup()"><i class="material-icons">menu</i>
+		</h1>
+		<div class="linksBar">
+			<ul>
+				<!-- change href to "/" -->
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+				<li><a href="Game_practice.html"> Games </a></li>
+			</ul>
+		</div>
 	</div>
 
 	<div class="content">
 
- <div id="body">
+		<div id="body">
 
-  <div class="center">
-	<h1> John C. Wattenbarger </h1>
-
-	<p> Houston, TX 77098 </p>
-	<p> (281) 840-0236 </p>
-	<p> johncwattenbarger@gmail.com </p>
-	<p> https://github.com/JohnWattenbarger </p>
-	</br>
-  </div>
-
-	<h2> EDUCATION </h2>
-		<div id="textbox">
-		  <p class="bold", class="left_special">University of St. Thomas </p> 
-		  <p class="right_special"> Houston, TX </p>
-		</div>
-		<div id="textbox">
-		  <p class="left_special">
-			Bachelor of Science, Computer Science </p> 
-		  <p class="right_special">Expected Dec. 2019 </p>
-		</div>
-
-		<p> Minor in Mathematics </p>
-		<p> Cumulative GPA: 3.9 </p>
-		<p> Major GPA: 4.0 </p>
-			</br>
-
-		<p class="bold">Relevant Coursework: </p> <!-- </br> -->
-			<div id="textbox">
-				<p class="left_special">
-					Intro to Programming </p>
-				<p class="right_special">
-					Organization of Computer- </p>
+			<div class="center">
+				<h1> John C. Wattenbarger </h1>
+				<p> (281) 840-0236 </p>
+				<p> johncwattenbarger@gmail.com </p>
+				<p> https://www.linkedin.com/in/john-wattenbarger-a06973139 </p>
+				</br>
 			</div>
-			<div id="textbox">
-				<p class="left_special">
-					Data Structures </p>
-				<p class="right_special">
-					Programming Languages </p>
+
+			<div class="group">
+				<h2> EMPLOYMENT </h2>
+				<div id="textbox">
+					<p class="bold left-special">All Points LLC -- Software Engineer</p>
+					<p class="right-special"> Jan. 2019 - Present </p>
+				</div>
+				<ul>
+					<li> Developed new software for NASA’s Artemis mission </li>
+					<li> Helped modernize web application to use classes and type checking </li>
+					<li> Frequently met and communicated with customers in an agile work environment</li>
+					<li> Improved automated testing by reducing duplication and creating utility methods</li>
+				</ul>
 			</div>
-			<div id="textbox">
-				<p class="left_special">
-					Object Oriented Programming </p>
-				<p class="right_special">
-					Database Systems </p>
+
+			<div class="group">
+				<h2> SKILLS AND TECHNOLOGIES </h2>
+				<div id="textbox">
+					<p class="bold left-special">Working Experience with:</p>
+				</div>
+				<p>
+					Agile, Apache Web Server, Automated Testing, CSS, Full Stack Development, HTML, Java, JavaScript,
+					Test Driven Development, Subversion
+				</p>
+				<div id="textbox">
+					<p class="bold left-special">Some Experience with:</p>
+				</div>
+				<p>
+					Android development, C++, C#, Git, Machine Learning, Python, R
+				</p>
 			</div>
-			<div id="textbox">
-				<p class="left_special">
-					Computer and Network Architecture </p>
-				<p class="right_special">
-					Foundations in Data Science </p>
+
+			<div class="group">
+				<h2> EDUCATION </h2>
+				<div id="textbox">
+					<p class="bold" , class="left-special">University of St. Thomas </p>
+					<p class="right-special"> Houston, TX </p>
+				</div>
+				<div id="textbox">
+					<p class="left-special">
+						Bachelor of Science, Computer Science </p>
+					<p class="right-special">Dec. 2018 </p>
+				</div>
+
+				<p> Minor in Mathematics </p>
+				<p> Graduated Summa Cum Laude </p>
+				<p> Computer Science Club President </p>
+				<p> GPA: 3.9 </p>
+				</br>
 			</div>
-			</br>
 
-	<h2> SKILLS </h2>
-		<p> Proficient in Java, Microsoft Word, PowerPoint, and Excel </br>
-			Experience with C++, HTML, CSS, JavaScript, SQL, Python, Git, R, Android
-		</p>
-		</br>
+			<div class="group">
+				<h2> HONORS AND AWARDS </h2>
+				<p> Alpha Sigma Lambda Honor Society </p>
+				<p> Aquinas Honor Society </p>
+				<p> Delta Epsilon Sigma Honor Society </p>
+				<p> Dean’s List </p>
+			</div>
 
-	<h2> Projects </h2>
-		<div id="textbox">
-		  <p class="bold", class="left_special"> Chess Program </p>
+			<div class="group">
+				<h2> Projects </h2>
+
+				<div id="textbox">
+					<p class="bold" , class="left-special"> Fantasy Football </p>
+				</div>
+
+				<ul>
+					<li> Gather NFL statistics over the past 10 years using web scraping techniques </li>
+					<li> Create interactive graphs with R and the Shiny package </li>
+					<li> Used the Pandas library in Python to generate predictive future stats </li>
+				</ul>
+
+				<div id="textbox">
+					<p class="bold" , class="left-special"> Chess Program </p>
+				</div>
+
+				<ul>
+					<li> Developed a fully functional chess program with a GUI using Java </li>
+					<li> Implemented all chess rules to only allow legal moves and determine a winner </li>
+				</ul>
+
+				<div id="textbox">
+					<p class="bold" , class="left-special"> Flappy Bird </p>
+				</div>
+
+				<ul>
+					<li> Created a Flappy Bird game using JavaScript </li>
+					<li> Presented this game at a school event to teach other students </li>
+				</ul>
+			</div>
 		</div>
 
-		<ul>
-			<li> Created a fully functional chess program with a GUI </li>
-			<li> Allows 2 players to make legal moves until checkmate is achieved </li>
-		</ul>
+	</div>
 
-		<div id="textbox">
-		  <p class="bold", class="left_special"> Flappy Bird </p>
+	<div class="footer">
+		<div class="footerBox">
+
+			<div class="subFooterBox">
+				<h2> My Webpages </h2>
+				<ul>
+					<li><a href="index.html"> Home </a></li>
+					<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+					<li><a href="Game_practice.html"> Games </a></li>
+				</ul>
+			</div>
+
+			<div class="subFooterBox2">
+				<h2> Contact Info </h2>
+				<ul>
+					<li> Email: johncwattenbarger@gmail.com </li>
+					<li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a>
+					</li>
+					<li> Linkedin: <a
+							href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a>
+					</li>
+				</ul>
+			</div>
+
 		</div>
-
-		<ul>
-			<li> Created a Flappy Bird game using JavaScript </li>
-			<li> Presented this game at a school event to teach other students </li>
-		</ul>
-
-		<div id="textbox">
-		  <p class="bold", class="left_special"> Fantasy Football </p>
-		</div>
-
-		<ul>
-			<li> Used web scrapping techniques to gather NFL statistics over the past 10 years </li>
-			<li> Used shiny to create interactive graphs </li>
-		</ul>
-		</br>
-
-	<h2> ACTIVITIES </h2>
-		<div id="textbox">
-		  <p class="left_special">Computer Science Club </p>
-		  <p class="right_special"> Spring 2017 - Present </p>
-		</div>
-
-		<ul>
-			<li> President and Co-founder </li>
-		</ul>
-
-		<div id="textbox">
-		  <p class="left_special">Math Club </p>
-		  <p class="right_special"> Fall 2017 - Present </p>
-		</div>
-
-		<div id="textbox">
-		  <p class="left_special">Ping Pong Club </p>
-		  <p class="right_special"> Fall 2017 - Present </p>
-		</div>
-
-		<div id="textbox">
-		  <p class="left_special">Soccer Club </p>
-		  <p class="right_special"> Fall 2015 - Present </p>
-		</div>
-		</br>
-
-	<h2> HONORS AND AWARDS </h2>
-		<p> Scholarship recipient </p>
-		<div id="textbox">
-		  <p class="left_special"> Dean’s list </p>
-		  <p class="right_special"> Fall 2015 - Present </p>
-		</div>
-		</br>
- </div>
-
- 	</div>
-
- 	<div class="footer">
-	 <div class="footerBox">
-
-	 	<div class="subFooterBox">
-		 	<h2> My Webpages </h2>
-			<ul>
-				<li><a href="index.html"> Home </a></li>
-				<li><a href="formatting_practice.html"> Resum&eacute </a></li>
-				<li><a href="Game_practice.html"> Games </a></li>
-				<li><a href="Table_Practice.html"> Table Practice </a></li>
-				<li><a href="imagemap_practice.html"> Image Mapping </a></li>
-				<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
-			</ul>
-		</div>
-
-		<div class="subFooterBox2">
-			<h2> Contact Info </h2>
-			<ul>
-				<li> Email: johncwattenbarger@gmail.com </li>
-				<li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a> </li>
-				<li> Linkedin: <a href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a> </li>
-			</ul>
-		</div>
-
-	 </div>
 	</div>
 
 </body>
+
 </html>

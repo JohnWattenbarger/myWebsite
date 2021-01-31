@@ -1,116 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
 
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html xml:lang="en">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title> John's Website </title>
 	<link rel="stylesheet" type="text/css" href="styles/standard.css" />
-	<link rel="stylesheet" type="text/css" href="styles/index.css" />
+	<script src="scripts/header.js"></script>
+
+	<!-- external sources -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
 	<div class="header">
-	 <h1> John's Website </h1>
-	 <div class="linksBar">
-	 	<ul>
-			<li><a href="index.html"> Home </a></li>
-			<li><a href="formatting_practice.html"> Resum&eacute </a></li>
-			<li><a href="Game_practice.html"> Games </a></li>
-			<li><a href="Table_Practice.html"> Table Practice </a></li>
-			<li><a href="imagemap_practice.html"> Image Mapping </a></li>
-			<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
-		</ul>
-	 </div>
+		<h1>
+			John's Website
+			<!-- only visible for mobile -->
+			<button class="menu" onclick="Header.openup()"><i class="material-icons">menu</i>
+		</h1>
+		<div class="linksBar">
+			<ul>
+				<!-- change href to "/" -->
+				<li><a href="index.html"> Home </a></li>
+				<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+				<li><a href="Game_practice.html"> Games </a></li>
+			</ul>
+		</div>
 	</div>
 
 	<div class="content">
 
 
-	<div class="introBox">
-	  <img src="images/JohnWattenbarger.jpg" style="box-shadow: 0, 0, 8px, 8px;" />
-	 <div class="textBox">
-	  <div>
-	  <h2> About Me </h2>
-	  <hr />
-		<p> Hi I'm John Wattenbarger, a Computer Science student at the <a href="http://www.stthom.edu">University of St. Thomas Houston</a>. I chose to study Computer Science because I love problem solving. In 2017 I cofounded the Computer Science Club at St. Thomas with <a href="http://docvarela.com">Luis Varela</a>. I built this website to practice html, css, and javascript, as well as to showcase some of my work.
-		</p>
-	</div>
-	 </div>
-	</div>
+		<div class="introBox">
+			<div class="textBox">
+				<div>
+					<h2> About Me </h2>
+					<hr />
+					<p>
+						Hi I'm John Wattenbarger, a software developer currently working at NASA to develop new software
+						for the Orion spacecraft as part of the Artemis mission.
+						I graduated with a Bachelor of Science degree from the <a
+							href="http://www.stthom.edu">University of St. Thomas Houston</a>. While in college, I
+						founded the Computer Science Club to help teach students more about programming, and to team up
+						with other Computer Science students. I served as president of the
+						Computer Science Club for 2 years, where I collaborated with officers and other school clubs to
+						host multiple fun and informative events. After graduating in
+						December of 2018, I began working as a software developer at NASA.
+					</p>
+					<p>
+						While at NASA, I have worked to develop 3 new applications frequently switching between frontend
+						and backend programming. I pride myself on being a flexible developer that is able to pick up
+						new languages and frameworks quickly while maintaining quality, maintainable code. I created
+						this website while in college to teach myself the basics of web development.
+						This website contains some information about me, and show off some
+						simple JavaScript games I created to improve my coding skills.
+					</p>
+				</div>
+			</div>
 
-	<div class = sectionContainer>
+			<div class="imageContainer">
+				<img src="images/john_nasa.jpg" style="box-shadow: 0, 0, 8px, 8px;" />
+			</div>
+		</div>
 
-	<h2 id="myWebpage"> My Webpages </h2>
-	<div class="flexContainer"> 
-	  <div class="flexBox">
-		<h3><a href="formatting_practice.html"> Resum&eacute </a></h3>
-		  <hr />
-			<p> This is one of the first webpages that I created. I experimented with different formatting techniques. Using CSS, I was able to recreate my resum&eacute in the form of a webpage.
-			</p>
-	  </div>
-	  <div class="flexBox">
-		<h3><a href="Game_practice.html"> Games </a></h3>
-		  <hr />
-			<p> I created this webpage to hold different javaScript games that I have made. The Flappy Bird game was originally created for a 
-				club event where I showed people how to make a video game from scratch.
-			</p>
-	  </div>
-	  <div class="flexBox">
-		<h3><a href="Table_Practice.html"> Table Practice </a></h3>
-		  <hr />
-			<p> I created this webpage to practice creating tables using html. I was also able to showcase one of my favorite hobbies, fantasy football. This page is a custom player rankings list that I created prior to the 2017 NFL season.
-			</p>
-	  </div>
-	</div>
+		<div class=sectionContainer>
 
-	<div class = "flexContainer">
-	  <div class="flexBox">
-		<h3><a href="imagemap_practice.html"> Image Mapping </a></h3>
-		  <hr />
-			<p> With this page, I experimented with the use of images. Specifically, I practiced image mapping (creating subsections of a large image). On this page, clicking any colored section of the map will link you to the corresponding college athletics conference.
-			</p>
-	  </div>
-	  <div class="flexBox">
-		<h3><a href="imagemap_practice.html"> JavaScript Practice </a></h3>
-		  <hr />
-			<p> This webpage was created when I was just starting to learn JavaScript. I experimented with simple things like changing an image,
-				and creating a back button.
-			</p>
-	  </div>
-	</div>
+			<h2 id="myWebpage"> My Webpages </h2>
+			<div class="flexContainer">
+				<div class="flexBox">
+					<h3><a href="formatting_practice.html"> Resum&eacute </a></h3>
+					<hr />
+					<p> This is one of the first webpages that I created. I experimented with different formatting
+						techniques.
+						Using CSS, I was able to recreate my resum&eacute in the form of a webpage.
+					</p>
+				</div>
+				<div class="flexBox">
+					<h3><a href="Game_practice.html"> Games </a></h3>
+					<hr />
+					<p> I created this webpage to hold different javaScript games that I have made. The Flappy Bird game
+						was originally created for a Computer Science Club event where I taught students how to make a
+						video game from scratch.
+					</p>
+				</div>
+			</div>
 
+		</div>
 	</div>
-</div>
 
 	<div class="footer">
-	 <div class="footerBox">
+		<div class="footerBox">
 
-	 	<div class="subFooterBox">
-		 	<h2> My Webpages </h2>
-			<ul>
-				<li><a href="index.html"> Home </a></li>
-				<li><a href="formatting_practice.html"> Resum&eacute </a></li>
-				<li><a href="Game_practice.html"> Games </a></li>
-				<li><a href="Table_Practice.html"> Table Practice </a></li>
-				<li><a href="imagemap_practice.html"> Image Mapping </a></li>
-				<li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
-			</ul>
+			<div class="subFooterBox">
+				<h2> My Webpages </h2>
+				<ul>
+					<li><a href="index.html"> Home </a></li>
+					<li><a href="formatting_practice.html"> Resum&eacute </a></li>
+					<li><a href="Game_practice.html"> Games </a></li>
+				</ul>
+			</div>
+
+			<div class="subFooterBox2">
+				<h2> Contact Info </h2>
+				<ul>
+					<li> Email: johncwattenbarger@gmail.com </li>
+					<li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a>
+					</li>
+					<li> Linkedin: <a
+							href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a>
+					</li>
+				</ul>
+			</div>
+
 		</div>
-
-		<div class="subFooterBox2">
-			<h2> Contact Info </h2>
-			<ul>
-				<li> Email: johncwattenbarger@gmail.com </li>
-				<li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a> </li>
-				<li> Linkedin: <a href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a> </li>
-			</ul>
-		</div>
-
-	 </div>
 	</div>
 
 </body>
+
 </html>

@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Games </title>
+    <link rel="stylesheet" type="text/css" href="styles/standard.css" />
+    <link rel="stylesheet" type="text/css" href="styles/Game_practice.css">
+    <script src="scripts/header.js"></script>
 
-<title> Games </title>
-<link rel="stylesheet" type="text/css" href="styles/standard.css" />
-<link rel="stylesheet" type="text/css" href="styles/Game_practice.css">
-
-
+    <!-- external sources -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-
-
 <body>
-
-
     <div class="header">
-     <h1> John's Website </h1>
-     <div class="linksBar">
-        <ul>
-            <li><a href="index.html"> Home </a></li>
-            <li><a href="formatting_practice.html"> Resum&eacute </a></li>
-            <li><a href="Game_practice.html"> Games </a></li>
-            <li><a href="Table_Practice.html"> Table Practice </a></li>
-            <li><a href="imagemap_practice.html"> Image Mapping </a></li>
-            <li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
-        </ul>
-     </div>
-    </div>
-
-    <div class="content">
-
-        <h2> My First Game </h2>
-
-        <script src="scripts/Game_practice.js"></script>
-
-        <h2> Flappy Bird </h2>
-
-        <script src="scripts/flappyBird.js" id="fb"></script>
-
-    </div>
-
-    <div class="footer">
-     <div class="footerBox">
-
-        <div class="subFooterBox">
-            <h2> My Webpages </h2>
+        <h1>
+            John's Website
+            <!-- only visible for mobile -->
+            <button class="menu" onclick="Header.openup()"><i class="material-icons">menu</i>
+        </h1>
+        <div class="linksBar">
             <ul>
                 <li><a href="index.html"> Home </a></li>
                 <li><a href="formatting_practice.html"> Resum&eacute </a></li>
                 <li><a href="Game_practice.html"> Games </a></li>
-                <li><a href="Table_Practice.html"> Table Practice </a></li>
+                <!-- <li><a href="Table_Practice.html"> Table Practice </a></li>
                 <li><a href="imagemap_practice.html"> Image Mapping </a></li>
-                <li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li>
+                <li><a href="JavaScript_Practice.html"> JavaScript Practice </a></li> -->
             </ul>
         </div>
-
-        <div class="subFooterBox2">
-            <h2> Contact Info </h2>
-            <ul>
-                <li> Email: johncwattenbarger@gmail.com </li>
-                <li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a> </li>
-                <li> Linkedin: <a href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a> </li>
-            </ul>
-        </div>
-
-     </div>
     </div>
 
+    <div class="content">
+        <h2> My First Game </h2>
+        <script src="scripts/Game_practice.js"></script>
+        <h2> Flappy Bird </h2>
+        <script src="scripts/flappyBird.js" id="fb"></script>
+    </div>
+
+    <div class="footer">
+        <div class="footerBox">
+            <div class="subFooterBox">
+                <h2> My Webpages </h2>
+                <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="formatting_practice.html"> Resum&eacute </a></li>
+                    <li><a href="Game_practice.html"> Games </a></li>
+                </ul>
+            </div>
+
+            <div class="subFooterBox2">
+                <h2> Contact Info </h2>
+                <ul>
+                    <li> Email: johncwattenbarger@gmail.com </li>
+                    <li> GitHub: <a href="https://github.com/JohnWattenbarger">https://github.com/JohnWattenbarger</a>
+                    </li>
+                    <li> Linkedin: <a
+                            href="https://www.linkedin.com/in/john-wattenbarger-a06973139/">https://www.linkedin.com/in/john-wattenbarger-a06973139/</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
